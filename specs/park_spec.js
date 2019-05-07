@@ -16,7 +16,7 @@ let hilda;
     jimo = new Dinosaur('Stegasaurs', 'herbivore', 10)
     bity = new Dinosaur('Brontosaur', 'herbivore', 20)
     hilda = new Dinosaur('Terredactyl', 'herbivore', 20)
-    tilda = new Dinosaur('t-rex', 'herbivore', 20)
+    tilda = new Dinosaur('t-rex', 'carnivore', 20)
     park = new Park('Hurrassic Park', 15, [tommy, jimo, bity,tilda])
   });
 
@@ -75,5 +75,10 @@ let hilda;
     const actual = park.total_annual_visitors();
     assert.strictEqual(actual,36500);
   });
+
+  it('should return an object of diets accoss the park', function(){
+    const actual = park.different_diets();
+    assert.deepStrictEqual(actual, { 'carnivore': 2, 'herbivore': 2, 'omnivore': 0 })
+  })
 
 });

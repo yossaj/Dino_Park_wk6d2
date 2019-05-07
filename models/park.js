@@ -54,4 +54,18 @@ Park.prototype.total_annual_visitors = function () {
   return (daily_visits * 365)
 };
 
+Park.prototype.different_diets = function(){
+  let diet = { 'carnivore': 0, 'herbivore': 0, 'omnivore': 0 }
+  for(dino of this.dinosaurs){
+    if(dino.diet === 'carnivore'){
+      diet.carnivore += 1
+    }else if(dino.diet === 'herbivore'){
+      diet.herbivore += 1
+    }else if(dino.diet === 'omnivore'){
+      diet.omnivore += 1
+    }
+  }
+  return diet
+};
+
 module.exports = Park;
