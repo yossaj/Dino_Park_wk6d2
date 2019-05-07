@@ -20,6 +20,15 @@ Park.prototype.most_visitors = function(){
 
 
 };
-
+//
+Park.prototype.all_species_of = function(species){
+  let dino_by_type = []
+  for (let dino of this.dinosaurs){
+    if (dino.species === species){
+      dino_by_type.push(dino)
+    }
+  }
+  return dino_by_type
+}
 
 module.exports = Park;
