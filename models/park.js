@@ -31,4 +31,14 @@ Park.prototype.all_species_of = function(species){
   return dino_by_type
 }
 
+Park.prototype.remove_these_dinos = function(species){
+
+  for( dino of this.dinosaurs){
+    if(dino.species == species){
+      position = this.dinosaurs.indexOf(dino);
+      this.dinosaurs.splice(position, 1);
+    }
+  }
+};
+
 module.exports = Park;
