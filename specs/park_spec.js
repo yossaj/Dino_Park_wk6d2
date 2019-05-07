@@ -61,9 +61,19 @@ let hilda;
 
 
   it('should be able to remove all dinosaurs of a particular species', function(){
-    park.remove_these_dinos('t-rex')
-    const actual = park.dinosaurs
-    assert.deepStrictEqual(actual, [jimo, bity])
+    park.remove_these_dinos('t-rex');
+    const actual = park.dinosaurs;
+    assert.deepStrictEqual(actual, [jimo, bity]);
+  });
+
+  it('should return the total number of visitors to the park each day', function(){
+    const actual = park.total_visitors();
+    assert.strictEqual(actual,100);
+  });
+
+  it('should return the total number of visitors to the park per year', function(){
+    const actual = park.total_annual_visitors();
+    assert.strictEqual(actual,36500);
   });
 
 });

@@ -41,4 +41,17 @@ Park.prototype.remove_these_dinos = function(species){
   }
 };
 
+Park.prototype.total_visitors = function(){
+  let total = 0
+  for(dino of this.dinosaurs){
+    total += dino.guestsAttractedPerDay
+  }
+  return total
+};
+
+Park.prototype.total_annual_visitors = function () {
+  let daily_visits = this.total_visitors()
+  return (daily_visits * 365)
+};
+
 module.exports = Park;
